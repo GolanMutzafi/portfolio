@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Plane Hangar Management</title>
+  </head>
+  <body>
+    <h1>Plane Hangar Management</h1>
+    <form action="/planes" method="post">
+      <label for="plane_id">Plane ID:</label>
+      <input type="text" id="plane_id" name="plane_id" required><br><br>
+      <label for="plane_type">Plane Type:</label>
+      <input type="text" id="plane_type" name="plane_type" required><br><br>
+      <label for="manufacturer">Manufacturer:</label>
+      <input type="text" id="manufacturer" name="manufacturer" required><br><br>
+      <input type="submit" value="Add Plane">
+    </form>
+    <h2>Planes in Hangar:</h2>
+    <table>
+      <tr>
+        <th>Plane ID</th>
+        <th>Plane Type</th>
+        <th>Manufacturer</th>
+      </tr>
+      <!-- Use Python code to retrieve data from MongoDB and insert into the table -->
+      {% for plane in planes %}
+      <tr>
+        <td>{{ plane['plane_id'] }}</td>
+        <td>{{ plane['plane_type'] }}</td>
+        <td>{{ plane['manufacturer'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
