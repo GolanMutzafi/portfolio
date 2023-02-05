@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Plane Hangar Management</title>
+    <script src="app.js"></script>
   </head>
   <body>
-    <h1>Plane Hangar Management</h1>
+    <!-- <h1>Plane Hangar Management</h1>
     <form action="/planes" method="post">
       <label for="plane_id">Plane ID:</label>
       <input type="text" id="plane_id" name="plane_id" required><br><br>
@@ -14,7 +15,42 @@
       <label for="manufacturer">Manufacturer:</label>
       <input type="text" id="manufacturer" name="manufacturer" required><br><br>
       <input type="submit" value="Add Plane">
-    </form>
+    </form> -->
+  <form id="plane-form">
+    <label for="fuel-supply">Fuel Supply:</label>
+    <input type="number" id="fuel-supply" name="fuel-supply">
+    <br><br>
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option value="operational">Operational</option>
+      <option value="grounded">Grounded</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="other">Other</option>
+      <option value="eject">Eject from Squadron</option>
+      <option value="add">Add to Squadron</option>
+    </select>
+    <br><br>
+    <label for="tail-number">Tail Number:</label>
+    <input type="text" id="tail-number" name="tail-number">
+    <br><br>
+    <label for="used-parts">Used Parts:</label>
+    <input type="text" id="used-parts" name="used-parts">
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+  <table id="plane-table">
+    <thead>
+      <tr>
+        <th>Fuel Supply</th>
+        <th>Status</th>
+        <th>Tail Number</th>
+        <th>Used Parts</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
     <h2>Planes in Hangar:</h2>
     <table>
       <tr>

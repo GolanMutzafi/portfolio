@@ -19,20 +19,20 @@ def show_menu(): #1
     pass
 def show_how(): #2
     pass
-def battle_short(): #3
+# def battle_short(): #3
+#     pass
+def clear_scr(): #3
     pass
-def clear_scr(): #4
-    pass
-def submit(): #5
+def submit(): #4
     pass
 
 functions = {
     0: test,
     1: show_menu,
     2: show_how,
-    3: battle_short,
-    4: clear_scr,
-    5: submit
+    3: clear_scr,
+    4: submit
+    # 5: battle_short,
 }
 
 def main():
@@ -59,7 +59,7 @@ db.mycollection.update_one(
     {"tail_number": "ABC123"},
     {"$set": {"status": "maintenance"}}
 )
-to = "example@email.com"
+to = "projhangarmanager@gmail.com"
 subject = "Plane Maintenance"
 body = "The plane with tail number ABC123 is now in maintenance mode."
 
@@ -68,5 +68,5 @@ email_text = f"Subject: {subject}\n\n{body}"
 with smtplib.SMTP("smtp.gmail.com", 587) as server:
     server.ehlo()
     server.starttls()
-    server.login("sender@gmail.com", "password")
-    server.sendmail("sender@gmail.com", to, email_text)
+    server.login("hangarmaintenancesoftware@gmail.com", "proj123456")
+    server.sendmail("hangarmaintenancesoftware@gmail.com", to, email_text)
