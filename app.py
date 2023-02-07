@@ -3,9 +3,9 @@ import pymongo
 from pymongo import MongoClient
 import smtplib
 
-# Connect to MongoDB
-client = MongoClient("mongodb://username:password@host:port/")
-db = client.mydatabase
+# # Connect to MongoDB
+# client = MongoClient("mongodb://username:password@host:port/")
+# db = client.mydatabase
 
 app = Flask(__name__)
 
@@ -42,31 +42,31 @@ def main():
 if __name__ == '__main__':
     app.run(debug=True)
 
-@app.route("/get_data", methods=["GET"])
-def get_data():
-    # Get data from MongoDB
-    data = db.mycollection.find_one({"tail_number": "ABC123"})
-    return jsonify(data)
+# @app.route("/get_data", methods=["GET"])
+# def get_data():
+#     # Get data from MongoDB
+#     data = db.mycollection.find_one({"tail_number": "ABC123"})
+#     return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-db.mycollection.update_one(
-    {"tail_number": "ABC123"},
-    {"$inc": {"amount": -1}}
-)
-db.mycollection.update_one(
-    {"tail_number": "ABC123"},
-    {"$set": {"status": "maintenance"}}
-)
-to = "projhangarmanager@gmail.com"
-subject = "Plane Maintenance"
-body = "The plane with tail number ABC123 is now in maintenance mode."
+# db.mycollection.update_one(
+#     {"tail_number": "ABC123"},
+#     {"$inc": {"amount": -1}}
+# )
+# db.mycollection.update_one(
+#     {"tail_number": "ABC123"},
+#     {"$set": {"status": "maintenance"}}
+# )
+# to = "projhangarmanager@gmail.com"
+# subject = "Plane Maintenance"
+# body = "The plane with tail number ABC123 is now in maintenance mode."
 
-email_text = f"Subject: {subject}\n\n{body}"
+# email_text = f"Subject: {subject}\n\n{body}"
 
-with smtplib.SMTP("smtp.gmail.com", 587) as server:
-    server.ehlo()
-    server.starttls()
-    server.login("hangarmaintenancesoftware@gmail.com", "proj123456")
-    server.sendmail("hangarmaintenancesoftware@gmail.com", to, email_text)
+# with smtplib.SMTP("smtp.gmail.com", 587) as server:
+#     server.ehlo()
+#     server.starttls()
+#     server.login("hangarmaintenancesoftware@gmail.com", "proj123456")
+#     server.sendmail("hangarmaintenancesoftware@gmail.com", to, email_text)
