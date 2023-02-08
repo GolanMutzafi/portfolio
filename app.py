@@ -3,9 +3,9 @@ import pymongo
 from pymongo import MongoClient
 import smtplib
 
-# # Connect to MongoDB
-# client = MongoClient("mongodb://username:password@host:port/")
-# db = client.mydatabase
+ # Connect to MongoDB
+client = MongoClient("mongodb://admin:golan123456@cluster0.ht6glhz.mongodb.net:27017/")
+db = client.mydatabase
 
 app = Flask(__name__)
 
