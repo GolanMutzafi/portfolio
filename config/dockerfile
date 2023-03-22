@@ -1,0 +1,17 @@
+# Start with the official Nginx image
+FROM nginx:latest
+
+# Set up a named link to the Flask container
+# (assuming the Flask container is named "flask-app")
+# This will allow Nginx to communicate with the Flask container
+# using the hostname "flask-app"
+# --link flask-app:flask-app
+
+# Copy the Nginx configuration
+COPY nginx.conf config/nginx.conf
+
+# Expose port 80 for Nginx
+EXPOSE 80
+
+# Start the Nginx application
+CMD ["nginx", "-g", "daemon off;"]

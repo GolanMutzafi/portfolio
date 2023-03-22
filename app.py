@@ -2,41 +2,45 @@ from flask import Flask, jsonify, render_template
 import pymongo
 from pymongo import MongoClient
 import smtplib
-
- # Connect to MongoDB
-client = MongoClient("mongodb://admin:golan123456@cluster0.ht6glhz.mongodb.net:27017/")
-db = client.mydatabase
+from bson import json_util
 
 app = Flask(__name__)
+client = MongoClient('my_db', 27017, username='admin', password='golan123')
+db = client
 
 @app.route('/')
 def index():
     return render_template('./index.html')
 
-def test(): #0
-    pass
-def show_menu(): #1
-    pass
-def show_how(): #2
-    pass
-# def battle_short(): #3
+# @app.route('/test/<plane>')
+# def test(plane):
+#    pass
+# def test(): #0
 #     pass
-def clear_scr(): #3
-    pass
-def submit(): #4
-    pass
+# def show_menu(): #1
+#     pass
+# def show_how(): #2
+#     pass
+# def clear_scr(): #3
+#     pass
+# def submit(): #4
+#     pass
 
-functions = {
-    0: test,
-    1: show_menu,
-    2: show_how,
-    3: clear_scr,
-    4: submit
-    # 5: battle_short,
-}
+# functions = {
+#     0: test,
+#     1: show_menu,
+#     2: show_how,
+#     3: clear_scr,
+#     4: submit
+# }
 
 def main():
-    show_menu()
+    # Connect to MongoDB
+    # client = pymongo.MongoClient("mongodb+srv://admin:golan123@cluster0.ht6glhz.mongodb.net/?retryWrites=true&w=majority")
+    # db = client.test
+    # client.server_info()
+    
+    # show_menu()
     
     pass
 if __name__ == '__main__':
