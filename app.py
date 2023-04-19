@@ -52,8 +52,8 @@ if __name__ == '__main__':
 #     data = db.mycollection.find_one({"tail_number": "ABC123"})
 #     return jsonify(data)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+#if __name__ == "__main__":
+#    app.run(debug=True)
 
 # db.mycollection.update_one(
 #     {"tail_number": "ABC123"},
